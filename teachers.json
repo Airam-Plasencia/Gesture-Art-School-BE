@@ -1,0 +1,62 @@
+[
+    {
+      "_id": 1,
+      "firstName": "Michael",
+      "lastName": "Mattesi",
+      "email": "mike.matessi@example.com",
+      "phone": "555-123-4567",
+      "linkedinUrl": "https://www.linkedin.com/in/mike-mattesi-b39b475/",
+      "program": "Force Drawing Creator",
+      "background": "Fine Arts",
+      "image": "https://s3.amazonaws.com/uploads.nma.art/uploads/2022/02/Portraits-7_smaller-634x372.jpg",
+      "courses": [
+        {
+          "courseId": 1,
+          "courseName": "Drawing with FORCE"
+        },
+        {
+          "courseId": 2,
+          "courseName": "Realistic Portrait Drawing"
+        }
+      ]
+    },
+    {
+      "_id": 2,
+      "firstName": "Glen",
+      "lastName": "Keane",
+      "email": "glen.keane@example.com",
+      "phone": "555-234-5678",
+      "linkedinUrl": "https://www.linkedin.com/company/glenkeaneproductions/?originalSubdomain=es",
+      "program": "Character Design",
+      "background": "Animation",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7lBeCTqNQTISc9TWYJnDhwXuqKzBIVzuXzA&s",
+      "courses": [
+        {
+          "courseId": 3,
+          "courseName": "Character Design for Animation"
+        }
+      ]
+    },
+    {
+      "_id": 3,
+      "firstName": "Will",
+      "lastName": "Weston",
+      "email": "Will.weston@example.com",
+      "phone": "555-345-6789",
+      "linkedinUrl": "https://www.linkedin.com/in/will-weston-52845347/",
+      "program": "Watercolor Techniques",
+      "background": "Fine Arts",
+      "image": "https://media.licdn.com/dms/image/v2/C5603AQHR3ReM8dV-pg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1639711834138?e=2147483647&v=beta&t=glY0MpgnekAZCo8D2O30qtk6n_lVCPkz0wLeewAIO7s",
+      "courses": [
+        {
+          "courseId": 4,
+          "courseName": "Figure Drawings"
+        },
+        {
+          "courseId": 5,
+          "courseName": "Mad Science Drawing Class"
+        }
+      ]
+    }
+  ]
+  
