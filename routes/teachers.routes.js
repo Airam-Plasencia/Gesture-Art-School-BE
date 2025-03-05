@@ -3,7 +3,7 @@ const Teacher = require('../models/Teacher');
 const router = express.Router();
 
 
-router.post('/teachers', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { firstName, lastName, email, phone, linkedinUrl, program, background, image, courses } = req.body;
     const newTeacher = await Teacher.create({ firstName, lastName, email, phone, linkedinUrl, program, background, image, courses });
@@ -15,7 +15,7 @@ router.post('/teachers', async (req, res) => {
 });
 
 
-router.get('/teachers', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const teachers = await Teacher.find().populate('courses.courseId'); 
     res.status(200).json(teachers);
@@ -26,7 +26,7 @@ router.get('/teachers', async (req, res) => {
 });
 
 
-router.get('/teachers/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   const { id } = req.params;
   try {
     const teacher = await Teacher.findById(id);
@@ -41,7 +41,7 @@ router.get('/teachers/:id', async (req, res) => {
 });
 
 
-router.put('/teachers/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
   const { id } = req.params;
   const { firstName, lastName, email, phone, linkedinUrl, program, background, image, courses } = req.body;
   try {
@@ -57,7 +57,7 @@ router.put('/teachers/:id', async (req, res) => {
 });
 
 
-router.delete('/teachers/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   const { id } = req.params;
   try {
     const deletedTeacher = await Teacher.findByIdAndDelete(id);

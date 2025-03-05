@@ -10,14 +10,8 @@
       "background": "Fine Arts",
       "image": "https://s3.amazonaws.com/uploads.nma.art/uploads/2022/02/Portraits-7_smaller-634x372.jpg",
       "courses": [
-        {
-          "courseId": 1,
-          "courseName": "Drawing with FORCE"
-        },
-        {
-          "courseId": 2,
-          "courseName": "Realistic Portrait Drawing"
-        }
+        "1",
+        "2"
       ]
     },
     {
@@ -31,10 +25,7 @@
       "background": "Animation",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7lBeCTqNQTISc9TWYJnDhwXuqKzBIVzuXzA&s",
       "courses": [
-        {
-          "courseId": 3,
-          "courseName": "Character Design for Animation"
-        }
+        "3"
       ]
     },
     {
@@ -48,14 +39,8 @@
       "background": "Fine Arts",
       "image": "https://media.licdn.com/dms/image/v2/C5603AQHR3ReM8dV-pg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1639711834138?e=2147483647&v=beta&t=glY0MpgnekAZCo8D2O30qtk6n_lVCPkz0wLeewAIO7s",
       "courses": [
-        {
-          "courseId": 4,
-          "courseName": "Figure Drawings"
-        },
-        {
-          "courseId": 5,
-          "courseName": "Mad Science Drawing Class"
-        }
+        "4",
+        "5"
       ]
     }
   ]
