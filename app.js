@@ -1,25 +1,29 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const morgan = require('morgan');
-const cors = require('cors');
+// ℹ️ Gets access to environment variables/settings
+// https://www.npmjs.com/package/dotenv
 require("dotenv").config();
+
+// ℹ️ Connects to the database
 require("./db");
 
+// Handles http requests (express is node js framework)
+// https://www.npmjs.com/package/express
+const express = require("express");
+const User = require("./models/User.model");
 const Student = require('./models/Student');
 const Teacher = require('./models/Teacher');
 const Course = require('./models/Course');
-
 const app = express();
 
-// Middleware
-app.use(express.json());
-app.use(morgan('dev'));
-app.use(cors({ origin: ["http://localhost:5005"] }));
+// ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
+require("./config")(app);
 
+// 👇 Start handling routes here
+const indexRoutes = require("./routes/index.routes");
+app.use("/api", indexRoutes);
 
+const authRoutes = require("./routes/auth.routes");
+app.use("/auth", authRoutes);
 
-
-// Rutas
 app.post('/students', async (req, res) => {
   try {
     const newStudent = new Student(req.body);
@@ -77,7 +81,8 @@ app.delete('/students/:id', async (req, res) => {
   }
 });
 
-// Exportar app para usarla en server.js
+require("./error-handling")(app);
+
 module.exports = app;
 
 
