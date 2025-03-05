@@ -14,9 +14,10 @@ const teacherSchema = new mongoose.Schema({
   program: { type: String, required: true },
   background: { type: String, required: true },
   image: { type: String, required: true },
-  courses: [courseSchema]
+  courses: [courseSchema] 
 });
 
 const Teacher = mongoose.model('Teacher', teacherSchema);
 
 module.exports = Teacher;
+
