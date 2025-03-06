@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
 const courseSchema = new mongoose.Schema({
-  courseName: { type: String, required: true },
-  courseDescription: { type: String, required: true },
-  courseLevel: { type: String, enum: ['Beginner', 'Intermediate', 'Advanced'], required: true },
-  courseDuration: { type: String, required: true },
-  requiredMaterials: { type: String },
-  instructor: { type: mongoose.Schema.Types.ObjectId, ref: 'Teacher', required: true }
+  courseName: String,
+  courseDescription: String,
+  courseLevel: String,
+  courseDuration: String,
+  requiredMaterials: String,
+  instructor: { type: mongoose.Schema.Types.ObjectId, ref: 'Instructor' }
 });
 
 const Course = mongoose.model('Course', courseSchema);

@@ -8,16 +8,19 @@ const courseSchema = new mongoose.Schema({
 });
 
 const studentSchema = new mongoose.Schema({
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
-  phone: { type: String, required: true },
-  linkedinUrl: { type: String },
-  program: { type: String, required: true },
-  background: { type: String, required: true },
-  image: { type: String, required: true },
-  cohort: { type: Number, required: true },
-  courses: [courseSchema]
+  firstName: String,
+  lastName: String,
+  email: String,
+  phone: String,
+  program: String,
+  background: String,
+  image: String,
+  cohort: Number,
+  courses: [{
+    courseId: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' },
+    progress: { type: Number, default: 0 },
+    enrollmentDate: Date
+  }]
 });
 
 const Student = mongoose.model('Student', studentSchema);

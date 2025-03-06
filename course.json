@@ -1,45 +1,44 @@
-{
-    "courses": [
-      {
-        "courseName": "Drawing with FORCE",
-        "courseDescription": "A course on force drawing techniques to create expressive and dynamic drawings.",
-        "courseLevel": "Beginner",
-        "courseDuration": "4 weeks",
-        "requiredMaterials": "Pencils, Sketchbook",
-        "instructor": "1"
-      },
-      {
-        "courseName": "Realistic Portrait Drawing",
-        "courseDescription": "Learn to draw realistic human faces with detailed shading and proportions.",
-        "courseLevel": "Intermediate",
-        "courseDuration": "6 weeks",
-        "requiredMaterials": "Charcoal, Paper, Eraser",
-        "instructor": "1"
-      },
-      {
-        "courseName": "Character Design for Animation",
-        "courseDescription": "Learn to design characters for animated films, including anatomy, expression, and personality.",
-        "courseLevel": "Advanced",
-        "courseDuration": "8 weeks",
-        "requiredMaterials": "Sketchbook, Color Pencils",
-        "instructor": "2"
-      },
-      {
-        "courseName": "Figure Drawings",
-        "courseDescription": "Learn the fundamentals of drawing human figures in different poses using watercolors.",
-        "courseLevel": "Intermediate",
-        "courseDuration": "5 weeks",
-        "requiredMaterials": "Watercolors, Brushes, Paper",
-        "instructor": "3"
-      },
-      {
-        "courseName": "Mad Science Drawing Class",
-        "courseDescription": "Explore creative and experimental drawing techniques using watercolors and mixed media.",
-        "courseLevel": "Beginner",
-        "courseDuration": "4 weeks",
-        "requiredMaterials": "Watercolors, Mixed Media Paper",
-        "instructor": "3"
-      }
-    ]
+[
+  {
+    "courseName": "Drawing with FORCE",
+    "courseDescription": "A course on force drawing techniques to create expressive and dynamic drawings.",
+    "courseLevel": "Beginner",
+    "courseDuration": "4 weeks",
+    "requiredMaterials": "Pencils, Sketchbook",
+    "instructor": "1"
+  },
+  {
+    "courseName": "Realistic Portrait Drawing",
+    "courseDescription": "Learn to draw realistic human faces with detailed shading and proportions.",
+    "courseLevel": "Intermediate",
+    "courseDuration": "6 weeks",
+    "requiredMaterials": "Charcoal, Paper, Eraser",
+    "instructor": "1"
+  },
+  {
+    "courseName": "Character Design for Animation",
+    "courseDescription": "Learn to design characters for animated films, including anatomy, expression, and personality.",
+    "courseLevel": "Advanced",
+    "courseDuration": "8 weeks",
+    "requiredMaterials": "Sketchbook, Color Pencils",
+    "instructor": "2"
+  },
+  {
+    "courseName": "Figure Drawings",
+    "courseDescription": "Learn the fundamentals of drawing human figures in different poses using watercolors.",
+    "courseLevel": "Intermediate",
+    "courseDuration": "5 weeks",
+    "requiredMaterials": "Watercolors, Brushes, Paper",
+    "instructor": "3"
+  },
+  {
+    "courseName": "Mad Science Drawing Class",
+    "courseDescription": "Explore creative and experimental drawing techniques using watercolors and mixed media.",
+    "courseLevel": "Beginner",
+    "courseDuration": "4 weeks",
+    "requiredMaterials": "Watercolors, Mixed Media Paper",
+    "instructor": "3"
   }
+]
+
   

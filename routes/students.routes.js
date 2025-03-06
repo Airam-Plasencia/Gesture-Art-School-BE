@@ -1,12 +1,41 @@
 const express = require('express');
 const Student = require('../models/Student');
+const mongoose = require('mongoose');
+const Course = require('../models/Course'); 
 const router = express.Router();
 
 
 router.post('/', async (req, res) => {
   try {
-    const newStudent = new Student(req.body);
+    const studentData = req.body;
+
+    
+    if (studentData.courses) {
+      studentData.courses = await Promise.all(
+        studentData.courses.map(async (course) => {
+          
+          const foundCourse = await Course.findById(course.courseId);
+          if (foundCourse) {
+            
+            return {
+              ...course,
+              courseName: foundCourse.courseName,  
+              courseDescription: foundCourse.courseDescription,  
+              courseLevel: foundCourse.courseLevel,  
+              courseDuration: foundCourse.courseDuration  
+            };
+          } else {
+            throw new Error(`Course with ID ${course.courseId} not found`);
+          }
+        })
+      );
+    }
+
+    
+    const newStudent = new Student(studentData);
     const savedStudent = await newStudent.save();
+
+    
     res.status(201).json(savedStudent);
   } catch (error) {
     console.error('Error creando estudiante:', error);
@@ -64,3 +93,5 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
+
+
