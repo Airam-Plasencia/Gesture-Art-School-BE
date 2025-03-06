@@ -1,7 +1,6 @@
 {
     "courses": [
       {
-        "_id": "1",
         "courseName": "Drawing with FORCE",
         "courseDescription": "A course on force drawing techniques to create expressive and dynamic drawings.",
         "courseLevel": "Beginner",
@@ -10,7 +9,6 @@
         "instructor": "1"
       },
       {
-        "_id": "2",
         "courseName": "Realistic Portrait Drawing",
         "courseDescription": "Learn to draw realistic human faces with detailed shading and proportions.",
         "courseLevel": "Intermediate",
@@ -19,7 +17,6 @@
         "instructor": "1"
       },
       {
-        "_id": "3",
         "courseName": "Character Design for Animation",
         "courseDescription": "Learn to design characters for animated films, including anatomy, expression, and personality.",
         "courseLevel": "Advanced",
@@ -28,7 +25,6 @@
         "instructor": "2"
       },
       {
-        "_id": "4",
         "courseName": "Figure Drawings",
         "courseDescription": "Learn the fundamentals of drawing human figures in different poses using watercolors.",
         "courseLevel": "Intermediate",
@@ -37,7 +33,6 @@
         "instructor": "3"
       },
       {
-        "_id": "5",
         "courseName": "Mad Science Drawing Class",
         "courseDescription": "Explore creative and experimental drawing techniques using watercolors and mixed media.",
         "courseLevel": "Beginner",

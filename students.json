@@ -1,6 +1,5 @@
 [
     {
-      "_id": 1,
       "firstName": "Ana",
       "lastName": "Gonzalez",
       "email": "ana.gonzalez@example.com",
@@ -12,7 +11,6 @@
       "cohort": 1,
       "courses": [
         {
-          "courseId": 1,
           "courseName": "Drawing with FORCE",
           "progress": 50,
           "enrollmentDate": "2025-01-15"
@@ -20,7 +18,6 @@
       ]
     },
     {
-      "_id": 2,
       "firstName": "Luis",
       "lastName": "Martinez",
       "email": "luis.martinez@example.com",
@@ -32,13 +29,11 @@
       "cohort": 2,
       "courses": [
         {
-          "courseId": 2,
           "courseName": "Realistic Portrait Drawing",
           "progress": 75,
           "enrollmentDate": "2025-02-01"
         },
         {
-          "courseId": 3,
           "courseName": "Character Design for Animation",
           "progress": 30,
           "enrollmentDate": "2025-02-10"
@@ -46,7 +41,6 @@
       ]
     },
     {
-      "_id": 3,
       "firstName": "Carla",
       "lastName": "Ruiz",
       "email": "carla.ruiz@example.com",
@@ -58,7 +52,6 @@
       "cohort": 1,
       "courses": [
         {
-          "courseId": 4,
           "courseName": "Character Design for Animation",
           "progress": 40,
           "enrollmentDate": "2025-01-10"
@@ -66,7 +59,6 @@
       ]
     },
     {
-      "_id": 4,
       "firstName": "John",
       "lastName": "Doe",
       "email": "john.doe@example.com",
@@ -78,7 +70,6 @@
       "cohort": 3,
       "courses": [
         {
-          "courseId": 5,
           "courseName": "Character Design for Animation",
           "progress": 20,
           "enrollmentDate": "2025-02-15"
@@ -86,7 +77,6 @@
       ]
     },
     {
-      "_id": 5,
       "firstName": "Sofia",
       "lastName": "Lopez",
       "email": "sofia.lopez@example.com",
@@ -98,7 +88,6 @@
       "cohort": 4,
       "courses": [
         {
-          "courseId": 6,
           "courseName": "Figure Drawings",
           "progress": 60,
           "enrollmentDate": "2025-01-20"
@@ -106,7 +95,6 @@
       ]
     },
     {
-      "_id": 6,
       "firstName": "David",
       "lastName": "Martinez",
       "email": "david.martinez@example.com",
@@ -118,7 +106,6 @@
       "cohort": 5,
       "courses": [
         {
-          "courseId": 7,
           "courseName": "Mad Science Drawing Class",
           "progress": 90,
           "enrollmentDate": "2025-02-05"
@@ -126,7 +113,6 @@
       ]
     },
     {
-      "_id": 7,
       "firstName": "Lucia",
       "lastName": "Fernandez",
       "email": "lucia.fernandez@example.com",
@@ -138,7 +124,6 @@
       "cohort": 6,
       "courses": [
         {
-          "courseId": 8,
           "courseName": "Mad Science Drawing Class",
           "progress": 50,
           "enrollmentDate": "2025-01-12"
