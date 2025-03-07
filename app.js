@@ -31,6 +31,9 @@ app.use("/students", studentRoutes);  // Ruta de estudiantes
 const teacherRoutes = require('./routes/teachers.routes');
 app.use("/teachers", teacherRoutes);  // Ruta de profesores
 
+const coursesRoutes = require('./routes/courses.routes');
+app.use("/courses", coursesRoutes);  // Ruta de cursos
+
 require("./error-handling")(app);
 
 module.exports = app;
