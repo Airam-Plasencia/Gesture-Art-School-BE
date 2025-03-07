@@ -1,6 +1,5 @@
 const { Schema, model } = require("mongoose");
 
-
 const userSchema = new Schema(
   {
     email: {
@@ -18,9 +17,13 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Name is required."],
     },
+    role: {
+      type: String,
+      enum: ['user', 'admin'],  
+      default: 'user',  
+    },
   },
   {
-    // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
   }
 );
@@ -28,3 +31,5 @@ const userSchema = new Schema(
 const User = model("User", userSchema);
 
 module.exports = User;
+
+
