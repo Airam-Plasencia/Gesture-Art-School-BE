@@ -6,7 +6,8 @@ const courseSchema = new mongoose.Schema({
   courseLevel: String,
   courseDuration: String,
   requiredMaterials: String,
-  instructor: { type: mongoose.Schema.Types.ObjectId, ref: 'Instructor' }
+  instructor: { type: mongoose.Schema.Types.ObjectId, ref: 'Instructor' },
+  image: { type: String, required: false }
 });
 
 const Course = mongoose.model('Course', courseSchema);

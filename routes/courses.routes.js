@@ -55,7 +55,8 @@ router.post('/', async (req, res) => {
       courseLevel,
       courseDuration,
       requiredMaterials,
-      instructor
+      instructor,
+      image
     });
 
     await newCourse.save();

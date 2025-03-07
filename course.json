@@ -5,7 +5,8 @@
     "courseLevel": "Beginner",
     "courseDuration": "4 weeks",
     "requiredMaterials": "Pencils, Sketchbook",
-    "instructor": "1"
+    "instructor": "1",
+    "image": "https://online-courses.club/wp-content/uploads/2022/09/New-Masters-Academy-Drawing-with-force-by-Mike-Mattesi.jpg"
   },
   {
     "courseName": "Realistic Portrait Drawing",
@@ -13,7 +14,8 @@
     "courseLevel": "Intermediate",
     "courseDuration": "6 weeks",
     "requiredMaterials": "Charcoal, Paper, Eraser",
-    "instructor": "1"
+    "instructor": "1",
+    "image": "https://public-files.gumroad.com/m9fqx2pbw18xbnvd9xkwalb7z2re"
   },
   {
     "courseName": "Character Design for Animation",
@@ -21,7 +23,8 @@
     "courseLevel": "Advanced",
     "courseDuration": "8 weeks",
     "requiredMaterials": "Sketchbook, Color Pencils",
-    "instructor": "2"
+    "instructor": "2",
+    "image": "https://mir-s3-cdn-cf.behance.net/projects/max_808/39014653495905.Y3JvcCw4OTcsNzAyLDE5LDA.jpg"
   },
   {
     "courseName": "Figure Drawings",
@@ -29,7 +32,8 @@
     "courseLevel": "Intermediate",
     "courseDuration": "5 weeks",
     "requiredMaterials": "Watercolors, Brushes, Paper",
-    "instructor": "3"
+    "instructor": "3",
+    "image": "https://images.squarespace-cdn.com/content/v1/54a9b1c4e4b039f26ffde404/2e6ea3cc-75e2-42ba-917f-7de27d6f1020/promo2+copy.jpg"
   },
   {
     "courseName": "Mad Science Drawing Class",
@@ -37,7 +41,8 @@
     "courseLevel": "Beginner",
     "courseDuration": "4 weeks",
     "requiredMaterials": "Watercolors, Mixed Media Paper",
-    "instructor": "3"
+    "instructor": "3",
+    "image": "https://drawingamerica.com/wp-content/uploads/2021/09/PropSplashPage2-3.jpeg"
   }
 ]
 
