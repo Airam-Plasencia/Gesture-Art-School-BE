@@ -36,6 +36,18 @@ router.post('/:userId/courses', isAuthenticated, async (req, res) => {
     res.status(500).json({ message: 'Error al agregar curso al perfil', error });
   }
 });
-
+router.get('/:userId', isAuthenticated, async (req, res) => {
+    const { userId } = req.params;
+    try {
+      const user = await User.findById(userId).populate('courses');
+      if (!user) {
+        return res.status(404).json({ message: 'Usuario no encontrado' });
+      }
+      res.status(200).json({ courses: user.courses });
+    } catch (error) {
+      res.status(500).json({ message: 'Error al cargar los cursos del perfil', error });
+    }
+  });
+  
 module.exports = router;
 
