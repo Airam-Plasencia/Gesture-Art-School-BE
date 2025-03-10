@@ -8,7 +8,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 // Requiere el modelo User para interactuar con la base de datos
-const User = require("../models/User.model");
+const User = require("../models/User.js");
 
 // Requiere el middleware isAuthenticated para controlar el acceso a rutas específicas
 const { isAuthenticated } = require("../middleware/jwt.middleware.js");
@@ -21,34 +21,30 @@ router.post("/signup", (req, res, next) => {
   const { email, password, name, role } = req.body;
 
   // Verifica si el email, password o name están vacíos
-  if (email === "" || password === "" || name === "") {
-    res.status(400).json({ message: "Provide email, password and name" });
-    return;
+  if (!email || !password || !name) {
+    return res.status(400).json({ message: "Provide email, password, and name" });
   }
 
   // Verificación del formato del email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   if (!emailRegex.test(email)) {
-    res.status(400).json({ message: "Provide a valid email address." });
-    return;
+    return res.status(400).json({ message: "Provide a valid email address." });
   }
 
   // Verificación de la contraseña
   const passwordRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (!passwordRegex.test(password)) {
-    res.status(400).json({
+    return res.status(400).json({
       message:
         "Password must have at least 6 characters and contain at least one number, one lowercase and one uppercase letter.",
     });
-    return;
   }
 
   // Verifica si el usuario ya existe
   User.findOne({ email })
     .then((foundUser) => {
       if (foundUser) {
-        res.status(400).json({ message: "User already exists." });
-        return;
+        return res.status(400).json({ message: "User already exists." });
       }
 
       // Encriptar la contraseña
@@ -64,6 +60,11 @@ router.post("/signup", (req, res, next) => {
       });
     })
     .then((createdUser) => {
+      // Verifica que el usuario se haya creado correctamente
+      if (!createdUser) {
+        return res.status(500).json({ message: "User could not be created." });
+      }
+
       // Deconstruir el usuario recién creado para omitir la contraseña
       const { email, name, _id, role } = createdUser;
 
@@ -73,7 +74,10 @@ router.post("/signup", (req, res, next) => {
       // Enviar una respuesta JSON con los datos del usuario
       res.status(201).json({ user: user });
     })
-    .catch((err) => next(err)); // Manejo de errores
+    .catch((err) => {
+      console.error(err);
+      next(err); // Manejo de errores
+    });
 });
 
 // POST /auth/login - Verifica el email y la contraseña y devuelve un JWT
@@ -81,17 +85,15 @@ router.post("/login", (req, res, next) => {
   const { email, password } = req.body;
 
   // Verifica si el email o la contraseña están vacíos
-  if (email === "" || password === "") {
-    res.status(400).json({ message: "Provide email and password." });
-    return;
+  if (!email || !password) {
+    return res.status(400).json({ message: "Provide email and password." });
   }
 
   // Verifica si el usuario existe
   User.findOne({ email })
     .then((foundUser) => {
       if (!foundUser) {
-        res.status(401).json({ message: "User not found." });
-        return;
+        return res.status(401).json({ message: "User not found." });
       }
 
       // Compara la contraseña proporcionada con la almacenada en la base de datos
@@ -125,4 +127,5 @@ router.get("/verify", isAuthenticated, (req, res, next) => {
 });
 
 module.exports = router;
+
 
