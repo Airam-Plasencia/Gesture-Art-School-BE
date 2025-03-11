@@ -1,29 +1,28 @@
 const { expressjwt: jwt } = require("express-jwt");
 
-// Instantiate the JWT token validation middleware
+// Verifica la autenticación usando el JWT
 const isAuthenticated = jwt({
-  secret: process.env.TOKEN_SECRET,
+  secret: process.env.TOKEN_SECRET,  // Usamos la variable de entorno TOKEN_SECRET
   algorithms: ["HS256"],
-  requestProperty: "payload",
-  getToken: getTokenFromHeaders,
+  requestProperty: "payload",  // Esto guardará el contenido del JWT en req.payload
+  getToken: (req) => {
+    // Verifica si el token está presente en los headers de la solicitud
+    if (req.headers.authorization && req.headers.authorization.split(" ")[0] === "Bearer") {
+      return req.headers.authorization.split(" ")[1];  // Retorna el token sin el 'Bearer'
+    }
+    return null;  // Si no hay token, no continúa
+  },
 });
 
-// Function used to extract the JWT token from the request's 'Authorization' Headers
-function getTokenFromHeaders(req) {
-  // Check if the token is available on the request Headers
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.split(" ")[0] === "Bearer"
-  ) {
-    // Get the encoded token string and return it
-    const token = req.headers.authorization.split(" ")[1];
-    return token;
+// Middleware para verificar si el usuario es admin
+const isAdmin = (req, res, next) => {
+  // Verifica que el rol del usuario sea 'admin' (asumimos que el JWT contiene un campo 'role')
+  if (req.payload && req.payload.role === 'admin') {
+    return next();  // Si es admin, continúa con la siguiente función
   }
-
-  return null;
-}
-
-// Export the middleware so that we can use it to create protected routes
-module.exports = {
-  isAuthenticated,
+  return res.status(403).json({ message: 'No tienes permisos de administrador' });
 };
+
+// Exportamos los middlewares para usarlos en otras partes de la aplicación
+module.exports = { isAuthenticated, isAdmin };
+
