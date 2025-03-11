@@ -16,13 +16,22 @@ const isAuthenticated = jwt({
 
 // Middleware para verificar si el usuario es admin
 const isAdmin = (req, res, next) => {
-  // Verifica que el rol del usuario sea 'admin' (asumimos que el JWT contiene un campo 'role')
-  if (req.payload && req.payload.role === 'admin') {
+  if (req.payload && req.payload.role === "admin") {
     return next();  // Si es admin, continúa con la siguiente función
   }
-  return res.status(403).json({ message: 'No tienes permisos de administrador' });
+  return res.status(403).json({ message: "No tienes permisos de administrador" });
 };
 
-// Exportamos los middlewares para usarlos en otras partes de la aplicación
-module.exports = { isAuthenticated, isAdmin };
+// Middleware de manejo de errores de autenticación
+const handleAuthError = (err, req, res, next) => {
+  if (err.name === "UnauthorizedError") {
+    return res.status(401).json({ message: "Token no válido o expirado" });
+  }
+  next(err);
+};
+
+module.exports = { isAuthenticated, isAdmin, handleAuthError };
+
+
+
 
