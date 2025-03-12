@@ -6,7 +6,7 @@ const isAuthenticated = jwt({
   algorithms: ["HS256"],
   requestProperty: "payload",  // Esto guardará el contenido del JWT en req.payload
   getToken: (req) => {
-    // Verifica si el token está presente en los headers de la solicitud
+  
     if (req.headers.authorization && req.headers.authorization.split(" ")[0] === "Bearer") {
       return req.headers.authorization.split(" ")[1];  // Retorna el token sin el 'Bearer'
     }

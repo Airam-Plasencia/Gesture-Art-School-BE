@@ -39,7 +39,7 @@ const coursesRoutes = require('./routes/courses.routes');
 app.use("/courses", coursesRoutes);  // Ruta de cursos
 
 const userRoutes = require('./routes/user.routes');
-app.use("/users", isAuthenticated, userRoutes);  // Ruta de usuarios
+app.use("/users",  userRoutes);  // Ruta de usuarios
 
 // Rutas de administración de cursos
 const adminCourseRoutes = require('./routes/adminCourses.routes');

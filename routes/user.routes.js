@@ -37,6 +37,7 @@ router.post('/:userId/courses', isAuthenticated, async (req, res) => {
   }
 });
 router.get('/:userId', isAuthenticated, async (req, res) => {
+  console.log('test')
     const { userId } = req.params;
     try {
       const user = await User.findById(userId).populate('courses');
@@ -45,6 +46,7 @@ router.get('/:userId', isAuthenticated, async (req, res) => {
       }
       res.status(200).json({ courses: user.courses });
     } catch (error) {
+      console.log(error)
       res.status(500).json({ message: 'Error al cargar los cursos del perfil', error });
     }
   });
