@@ -2,7 +2,7 @@ require("dotenv").config();
 require("./db");
 
 const express = require("express");
-const cors = require("cors");
+
 const User = require("./models/User");
 const Student = require('./models/Student');
 const Teacher = require('./models/Teacher');
