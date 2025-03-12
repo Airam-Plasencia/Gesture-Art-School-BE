@@ -11,15 +11,11 @@ const { isAuthenticated, isAdmin } = require('./middleware/jwt.middleware');
 
 const app = express();
 
-const corsOptions = {
-  origin: "http://localhost:3000",
-  allowedHeaders: ["Authorization", "Content-Type"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-};
+require("./config")(app);
 
-app.use(cors(corsOptions));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
+/* app.use(express.json());
+app.use(express.urlencoded({ extended: true })); */
 
 // Rutas
 const indexRoutes = require("./routes/index.routes");
