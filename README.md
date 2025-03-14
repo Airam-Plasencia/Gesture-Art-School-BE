@@ -37,17 +37,29 @@ To start the server in production mode:
 Copynpm start
 Project Structure
 Copy/
+
 ├── config/             # Configuration files
+
 ├── controllers/        # Route controllers
+
 ├── middleware/         # Custom middleware
+
 ├── models/             # Mongoose models
+
 ├── routes/             # API route definitions
+
 ├── utils/              # Utility functions
+
 ├── .env                # Environment variables (not in repo)
+
 ├── .gitignore          # Git ignore file
+
 ├── package.json        # Project dependencies and scripts
+
 ├── README.md           # Project documentation
+
 └── server.js           # Main application entry point
+
 Features
 
 User authentication (register, login, JWT)
