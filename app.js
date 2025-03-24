@@ -37,6 +37,9 @@ app.use("/courses", coursesRoutes);  // Ruta de cursos
 const userRoutes = require('./routes/user.routes');
 app.use("/users",  userRoutes);  // Ruta de usuarios
 
+const geminiRoutes = require('./routes/gemini.routes');
+app.use("/gemini",  geminiRoutes);  // Ruta de gemini
+
 // Rutas de administración de cursos
 const adminCourseRoutes = require('./routes/adminCourses.routes');
 app.use("/admin/courses", isAuthenticated, isAdmin, adminCourseRoutes);  // Solo accesible por administradores

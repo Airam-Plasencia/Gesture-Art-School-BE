@@ -2,15 +2,20 @@ const express = require('express');
 const Course = require('../models/Course');
 const router = express.Router();
 const mongoose = require('mongoose');
+const geminiService = require('../geminiService');
 
 async function getCourseIds() {
   const courses = await Course.find();
   return courses.map(course => ({
     courseId: course._id,
-    courseName: course.courseName
+    courseName: course.courseName,
+    courseDescription: course.courseDescription,
+    courseLevel: course.courseLevel,
+    courseDuration: course.courseDuration,
+    requiredMaterials: course.requiredMaterials,
+    instructor: course.instructor
   }));
 }
-
 
 router.get('/', async (req, res) => {
   try {
@@ -118,5 +123,18 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+/* router.post('/recommendations', async (req, res) => {
+  try {
+    const { userInterests } = req.body;
+    const courseList = await getCourseIds();
+    const recommendations = await geminiService.generateCourseRecommendations(userInterests, courseList);
+    res.status(200).json({ recommendations });
+  } catch (error) {
+    res.status(500).json({ message: 'Error al generar recomendaciones', error });
+  }
+}); */
+
 module.exports = router;
+
+
 
